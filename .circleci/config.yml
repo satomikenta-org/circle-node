@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - run:
+          name: AWS EC2 deploy
+          command: |
+            ssh -o StrictHostKeyChecking=no ec2-user@ec2-3-112-202-137.ap-northeast-1.compute.amazonaws.com \
+            "echo Start deploy && \
+            mkdir app && \
+            cd app/ $$ \
+            sudo  && \
+            npm i && \
+            npm run build && \
+            pm2 stop build/server && \
+            pm2 start build/server && \
+            echo Deploy end"
