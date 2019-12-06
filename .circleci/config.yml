@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  build_demo:
     docker:
       - image: circleci/node:10
     steps:
@@ -24,5 +24,7 @@ workflows:
   version: 2
   build_and_deploy:
     jobs:
-      - build
-      - deploy
+      - build_demo
+      - deploy:
+          requires:
+            - build_demo
