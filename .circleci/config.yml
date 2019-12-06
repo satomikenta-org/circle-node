@@ -9,11 +9,8 @@ jobs:
           command: |
             ssh -o StrictHostKeyChecking=no ec2-user@ec2-3-112-202-137.ap-northeast-1.compute.amazonaws.com \
             "echo Start deploy && \
-            mkdir app && \
-            cd app/ $$ \
-            sudo  && \
+            cd app/circle-node/ $$ \
+            git pull https://satomikennta.org@gmail.com:eJDZsjia1213@github.com/satomikenta-org/circle-node.git master && \
             npm i && \
-            npm run build && \
-            pm2 stop build/server && \
-            pm2 start build/server && \
+            node index.js && \
             echo Deploy end"
