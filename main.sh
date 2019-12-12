@@ -1,6 +1,6 @@
 #! /bin/sh
 
-ssh $HOST \
+ssh ec2-user@ec2-3-112-202-137.ap-northeast-1.compute.amazonaws.com \
 
 "echo Start deploy && \
 
