@@ -22,7 +22,7 @@ jobs:
     steps:
       - run:
           name: AWS EC2 deploy
-          command: ./main.sh
+          shell: ./main.sh
             # ssh ec2-user@ec2-3-112-202-137.ap-northeast-1.compute.amazonaws.com \
             # "echo Start deploy && \
             # cd app/circle-node/ && \
