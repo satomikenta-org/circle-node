@@ -1,4 +1,5 @@
 #! /bin/sh
+echo $HOST \
 ssh $HOST \
 "echo Start deploy && \
 cd app/circle-node/ && \
