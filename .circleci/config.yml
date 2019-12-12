@@ -10,6 +10,7 @@ jobs:
     machine:
       enabled: true
     steps:
+      - checkout
       - run: 
           name: "Deploy to EC2"
           command: pwd
