@@ -17,8 +17,11 @@ jobs:
           name: "Deploy to EC2"
           command: pwd
       - run:
-          name: "ls"
-          command: ls
+          name: "check env"
+          command: echo $HOST
+      - run:
+        name: "check env2"
+        command: echo $EC2_HOST
       - run:
           name: "inject ENV"
           command: echo $HOST >> ./main.sh
