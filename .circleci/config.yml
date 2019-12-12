@@ -1,15 +1,5 @@
 version: 2
 jobs:
-  shellcheck:
-    docker:
-      - image: circleci/node:10
-    steps:
-      - checkout
-      - run:
-          name: script-check
-          command: |
-            find . -type f -name '*.sh' | wc -l
-            find . -type f -name '*.sh' | xargs shellcheck --external-sources
   build_demo:
     docker:
       - image: circleci/node:10
@@ -35,9 +25,7 @@ workflows:
   version: 2
   build_and_deploy:
     jobs:
-      - shellcheck
       - build_demo
       - deploy:
           requires:
-            - shellcheck
             - build_demo
