@@ -18,7 +18,7 @@ jobs:
           command: pwd
       - run:
           name: "check env"
-          command: echo $HOST
+          command: echo ${HOST}
       - run:
           name: "inject ENV"
           command: echo $HOST >> ./main.sh
