@@ -10,8 +10,8 @@ jobs:
     machine:
       enabled: true
     steps:
-      - run: chmod 777 ./main.sh
-      - run: ./main.sh
+      - run: chmod 777 /bin/deploy.sh
+      - run: /bin/deploy.sh
             # ssh ec2-user@ec2-3-112-202-137.ap-northeast-1.compute.amazonaws.com \
             # "echo Start deploy && \
             # cd app/circle-node/ && \
